@@ -34,13 +34,13 @@ void	long_stack_sort(t_stack **stack_a, t_stack **stack_b)
 		{
 			num = (*stack_a)->value;
 			if (((num >> i) & 1) == 0)
-				push(stack_a, stack_b);
+				push_a(stack_a, stack_b);
 			else
-				rotate(stack_a);
+				rotate_a(stack_a);
 			j++;
 		}
 		while (*stack_b)
-			push(stack_b, stack_a);
+			push_b(stack_b, stack_a);
 		i++;
 	}
 }

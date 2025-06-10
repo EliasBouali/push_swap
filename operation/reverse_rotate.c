@@ -34,15 +34,18 @@ void	reverse_rotate(t_stack **stack)
 void	reverse_rotate_a(t_stack **first_stack)
 {
 	reverse_rotate(first_stack);
+	ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_stack **second_stack)
 {
 	reverse_rotate(second_stack);
+	ft_printf("rrb\n");
 }
 
 void	reverse_rotate_both(t_stack **first_stack, t_stack **second_stack)
 {
 	reverse_rotate(first_stack);
 	reverse_rotate(second_stack);
+	ft_printf("rrr\n");
 }

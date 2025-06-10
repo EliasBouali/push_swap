@@ -29,15 +29,18 @@ void	swap(t_stack **stack)
 void	swap_a(t_stack **first_stack)
 {
 	swap(first_stack);
+	ft_printf("sa\n");
 }
 
 void	swap_b(t_stack **seconde_stack)
 {
 	swap(seconde_stack);
+	ft_printf("sb\n");
 }
 
 void	swap_both(t_stack **first_stack, t_stack **seconde_stack)
 {
 	swap(first_stack);
 	swap(seconde_stack);
+	ft_printf("ss\n");
 }

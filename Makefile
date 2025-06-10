@@ -11,6 +11,7 @@ SRC = main.c \
 			long_sort.c \
 		ft_printf/ft_print_ptr.c ft_printf/ft_printf.c ft_printf/ft_put_unsigned.c \
 		ft_printf/ft_putchar.c ft_printf/ft_puthex.c ft_printf/ft_putnbr.c ft_printf/ft_putstr.c \
+		ft_split.c \
 
 
 OBJ = $(SRC:.c=.o)

@@ -39,16 +39,16 @@ void	five_stack_sort(t_stack **stack_a, t_stack **stack_b)
 		if (index <= len_stack_a / 2)
 		{
 			while (*stack_a != min_value)
-				rotate(stack_a);
+				rotate_a(stack_a);
 		}
 		else
 		{
 			while (*stack_a != min_value)
-				reverse_rotate(stack_a);
+				reverse_rotate_a(stack_a);
 		}
-		push(stack_a, stack_b);
+		push_a(stack_a, stack_b);
 	}
 	three_stack_sort(stack_a);
-	push(stack_b, stack_a);
-	push(stack_b, stack_a);
+	push_b(stack_b, stack_a);
+	push_b(stack_b, stack_a);
 }
