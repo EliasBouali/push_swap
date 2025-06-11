@@ -12,6 +12,18 @@
 
 #include "push_swap.h"
 
+void	print_stack(t_stack *stack)
+{
+	t_stack *current = stack;
+	while (current != NULL)
+	{
+		ft_printf("%d ", current->value);  // Remplace `value` par le nom du champ qui contient la valeur
+		current = current->next;
+	}
+	ft_printf("\n");
+}
+
+
 static void push_swap(t_stack **stack_a, t_stack **stack_b, char *argv[], bool two_argc)
 {
   if (is_stack_sorted(*stack_a))
@@ -24,13 +36,14 @@ static void push_swap(t_stack **stack_a, t_stack **stack_b, char *argv[], bool t
       five_stack_sort(stack_a, stack_b);
   else
       long_stack_sort(stack_a, stack_b);
-  free_all(stack_a, argv, two_argc);
+  //free_all(stack_a, argv, two_argc);
 }
 
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+  char **args;
   bool two_argc;
 
 	stack_a = NULL;
@@ -39,12 +52,17 @@ int	main(int argc, char *argv[])
   if (argc == 1 || (argc == 2 && !argv[1][0]))
       return (1);
   if (argc == 2)
-  {
-    argv = ft_split(argv[1], ' ');
-    two_argc = true;
-  }
-  stack_init(&stack_a, argv + 1, two_argc);
-  push_swap(&stack_a, &stack_b, argv, two_argc);
+{
+	args = ft_split(argv[1], ' ');
+	two_argc = true;
+}
+else
+	args = argv + 1;
+  stack_init(&stack_a, args, two_argc);
+  push_swap(&stack_a, &stack_b, args, two_argc);
+  print_stack(stack_a);
   free_stack(&stack_b);
+  if (two_argc)
+	free_split(args);
 	return (0);
 }

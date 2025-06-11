@@ -49,6 +49,5 @@ void	free_all(t_stack **stack, char **argv, bool two_argc)
 	free_stack(stack);
 	if (two_argc)
 		free_argv(argv);
-	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }

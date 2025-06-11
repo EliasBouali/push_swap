@@ -141,3 +141,15 @@ int	get_value_index(t_stack *stack, t_stack *node)
 	}
 	return (-1);
 }
+void	free_split(char **split)
+{
+	int	i;
+
+	if (!split)
+		return;
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
+}
+

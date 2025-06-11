@@ -14,10 +14,10 @@ static void	move_block_to_b(t_stack **stack_a, t_stack **stack_b, int block_min,
 		{
 			push(stack_a, stack_b);
 			if ((*stack_b)->value < (block_min + block_max) / 2)
-				rotate(stack_b);
+				rotate_b(stack_b);
 		}
 		else
-			rotate(stack_a);
+			rotate_a(stack_a);
 		i++;
 	}
 }
@@ -34,14 +34,14 @@ static void	push_max_to_a(t_stack **stack_a, t_stack **stack_b)
 		if (index <= stack_len(*stack_b) / 2)
 		{
 			while (*stack_b != max_node)
-				rotate(stack_b);
+				rotate_b(stack_b);
 		}
 		else
 		{
 			while (*stack_b != max_node)
-				reverse_rotate(stack_b);
+				reverse_rotate_b(stack_b);
 		}
-		push(stack_b, stack_a);
+		push_b(stack_b, stack_a);
 	}
 }
 
@@ -62,5 +62,4 @@ void	long_stack_sort(t_stack **stack_a, t_stack **stack_b)
 		block_max += block_size;
 	}
 	push_max_to_a(stack_a, stack_b);
-}
-*/
+}*/

@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_stack
 {
@@ -72,5 +73,7 @@ int	ft_putchar(char c);
 int	ft_puthex(unsigned int n, int is_upper);
 int	ft_putnbr(int n);
 int	ft_putstr(char *s);
+void	free_split(char **split);
+
 
 #endif
